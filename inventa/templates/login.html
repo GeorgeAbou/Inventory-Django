@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión - GK Soluciones Informáticas</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">
+            <h1>Inventa</h1>
+            <p>El sistema de manejo de inventario más eficiente para tu empresa.</p>
+            <div class="logo">
+                <img src="{% static 'imagenes/logo-login.png' %}" alt="GK Soluciones Informáticas">
+            </div>
+        </div>
+        <div class="login-form">
+            
+            <h2>Inicio de sesión</h2>
+            <!-- Formulario de inicio de sesión -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Desarrollado por <a href="https://www.gksoluciones.com" target="_blank">GK Soluciones Informáticas</a></p>
+    </div>
+</body>
+</html>

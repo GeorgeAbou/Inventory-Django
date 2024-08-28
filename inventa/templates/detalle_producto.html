@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>{{ producto.nombre }}</h1>
+        <p><strong>Descripción:</strong> {{ producto.descripcion }}</p>
+        <p><strong>Cantidad:</strong> {{ producto.precio }}</p>
+        <p><strong>Categoría:</strong> {{ producto.categoria.nombre }}</p>
+
+        <div class="actions">
+            <a href="{% url 'editar_producto' producto.id %}" class="btn btn-primary">Editar Producto</a>
+            <a href="{% url 'eliminar_producto' producto.id %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar Producto</a>
+        </div>
+
+    </div>
+{% endblock %}

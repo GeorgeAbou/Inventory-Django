@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #003366; /* Dark blue */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #003366; /* Dark blue */
+    margin-bottom: 15px;
+}
+
+/* Form Section */
+.form-section {
+    background-color: #e6f2ff; /* Light blue background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-control {
+    margin-bottom: 15px;
+}
+
+button[type="submit"] {
+    background-color: #ffcc00; /* Light yellow */
+    color: #003366; /* Dark blue */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* List Section */
+.list-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #003366; /* Dark blue */
+    color: #ffffff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey */
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc; /* Blue color for links */
+}
+
+a:hover {
+    text-decoration: underline;
+}

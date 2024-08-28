@@ -1,0 +1,219 @@
+/* static/css/home.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    margin-bottom: 20px; /* Espacio entre el avatar y el mensaje de bienvenida */
+}
+.avatar {
+    background-color: #fff; /* Fondo blanco para el avatar */
+    color: #0044cc; /* Color del ícono */
+    border-radius: 50%; /* Redondear el fondo del avatar */
+    width: 60px; /* Tamaño del avatar */
+    height: 60px; /* Tamaño del avatar */
+    display: flex;
+    justify-content: center; /* Centra el ícono horizontalmente */
+    align-items: center; /* Centra el ícono verticalmente */
+    font-size: 1.5rem; /* Tamaño del ícono */
+    margin-bottom: 10px; /* Espacio entre el avatar y el mensaje de bienvenida */
+}
+
+.navbar {
+    width: 200px; /* Ancho del navbar */
+    background-color: #0044cc; /* Azul oscuro */
+    color: #fff;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.layout {
+    display: flex;
+}
+
+.navbar {
+    width: 200px; /* Ancho del navbar */
+    background-color: #0044cc; /* Azul oscuro */
+    color: #fff;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar .welcome-message {
+    margin-bottom: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-bottom: 15px;
+}
+
+.navbar .nav-link {
+    display: block;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.navbar .nav-link:hover {
+    background-color: #0055cc; /* Azul más oscuro en hover */
+}
+
+.navbar .logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a.logout-btn{
+    color: #0055cc;
+}
+a.logout-btn:hover{
+    color: red;
+}
+img{
+    height: 100px;
+    width: 300px;
+}
+
+
+.navbar .logout-btn {
+    display: flex;
+    align-items: center;
+    background-color: #ff4d4d; /* Rojo para el botón de cierre de sesión */
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.navbar .logout-btn:hover {
+    background-color: red /* Rojo más oscuro en hover */
+}
+
+.navbar .logout-btn i {
+    margin-right: 8px;
+}
+
+.navbar .info {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.content {
+    margin-left: 200px; /* Espacio para el navbar */
+    width: calc(100% - 200px); /* Ajusta el ancho del contenido */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color:#fff; /* Naranja para la barra superior */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Altura del header */
+}
+
+header .logo {
+    height: 60px; /* Tamaño del logo */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+    margin-left: 0;
+}
+
+header .welcome-message-header {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Espacio entre el mensaje de bienvenida y el borde del header */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.hero {
+    background-color: #e0f7ff; /* Azul muy claro */
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    color: #0044cc; /* Azul oscuro */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        top: 0;
+        left: 0;
+    }
+
+    header {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    main {
+        margin-top: 20px; /* Ajusta el margen superior para pantallas pequeñas */
+    }
+}

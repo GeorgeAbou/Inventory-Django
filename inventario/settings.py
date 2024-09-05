@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'inventario.urls'
@@ -124,9 +125,25 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-#conf login y logout
+
+
+###Auth config###############################################################
 
 # Redirige a la página de inicio después de iniciar sesión
 LOGIN_REDIRECT_URL = 'home'
+
 # Redirige a la página de inicio de sesión después de cerrar sesión
 LOGOUT_REDIRECT_URL = 'login'
+
+LOGIN_URL = '/login/' # Redirige a los usuarios no autenticados a esta URL
+
+# Tiempo después del cual una sesión inactiva se considera expirada
+SESSION_COOKIE_AGE = 60 * 30   #Duración de la sesión en minutos =10 minutos
+
+
+#SESSION_COOKIE_SECURE = True  # Para asegurar que la cookie de sesión se envíe solo a través de HTTPS
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # La sesión expirará cuando el navegador se cierre
+#SECURE_SSL_REDIRECT = True  # Redirige todo el tráfico HTTP a HTTPS
+#CSRF_COOKIE_SECURE = True  # Solo envía cookies CSRF a través de HTTPS
+#CSRF_COOKIE_HTTPONLY = True#protecciona adicional crf
+##################################################################################

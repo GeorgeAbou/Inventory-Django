@@ -30,7 +30,7 @@ class LoginForm(forms.Form):
         return cleaned_data
 
 
-#formulario crear Producto
+#formulario Producto
 
 class ProductoForm(forms.ModelForm):
     class Meta:
@@ -54,4 +54,21 @@ class ProductoForm(forms.ModelForm):
         #      self.fields[field].widget.attrs.update({
         #          'class': 'form-control'
         #          })
+
+
+#formulario categoria
+
+class CategoriaForm(forms.ModelForm):
+    class Meta:
+        model= Categoria
+
+        fields = ['nombre', 'observacion']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de  Categoria'}),
+            'observacion': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Observacion Categoria', 'rows': 4}),
+        }
+
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 

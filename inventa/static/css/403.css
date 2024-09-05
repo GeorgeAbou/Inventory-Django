@@ -1,0 +1,19 @@
+.Contenedor{
+    background-color:rgb(233, 194, 194);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.titulo{
+    color: rgba(164, 0, 0, 0.766);
+}
+
+.subtitulo{
+    color: yellow;
+}
+
+.Contenedor{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

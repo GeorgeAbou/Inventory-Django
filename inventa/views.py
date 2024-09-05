@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .models import *
-from .forms import LoginForm,ProductoForm
+from .forms import LoginForm,ProductoForm,CategoriaForm
 
 
 
@@ -45,13 +45,14 @@ def logoutView(request):
     logout(request)
     return redirect('login')
 
-##GET Productos
+############### Productos#################################
+#GET
 class ProductoListView(LoginRequiredMixin,ListView):
     model = Producto
     template_name = "productos.html"
     context_object_name='productos'
 
-    #contexto para el formulario,si no noi cargar el formulario 
+    #contexto para el formulario,si no ,no cargar el formulario 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = ProductoForm()  # Añadimos el formulario al contexto
@@ -87,14 +88,14 @@ class ProductoUpdateView(LoginRequiredMixin,UpdateView):
         return reverse_lazy('productos')
 
 
-class ProductoDetailView(DetailView):
+class ProductoDetailView(LoginRequiredMixin,DetailView):
     model = Producto
     template_name = "producto-detalle.html"
 
 
 #DELETE PRODUCTOS
 
-class ProductoDeleteView(DeleteView):
+class ProductoDeleteView(LoginRequiredMixin,DeleteView):
     model = Producto
     template_name = "confirm_delete.html"
 
@@ -106,7 +107,7 @@ class ProductoDeleteView(DeleteView):
         return reverse_lazy('productos')
     
 #detailview
-class ProductoDetailView(DetailView):
+class ProductoDetailView(LoginRequiredMixin,DetailView):
     model = Producto
     template_name = "detalle_producto.html"
     context_object_name='producto'
@@ -117,3 +118,32 @@ class ProductoDetailView(DetailView):
         context['editar_producto'] = reverse_lazy('editar_producto', kwargs={'pk': self.object.pk})
         context['eliminar_producto'] = reverse_lazy('eliminar_producto', kwargs={'pk': self.object.pk})
         return context
+    
+#############################categoria#################
+
+#GET
+class CategoriaListView(LoginRequiredMixin,ListView):
+    model = Categoria
+    template_name = "categorias.html"
+    context_object_name='categorias'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CategoriaForm()  # Añadimos el formulario al contexto
+        return context
+
+
+#POST
+class CategoriaCreateView(CreateView):
+    model = Categoria
+    form_class=CategoriaForm
+    template_name = "categorias.html"
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Categoria  agregada exitosamente.')
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('categorias')
+
+#PUT    

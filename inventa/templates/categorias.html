@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="{% static 'css/categorias.css' %}">
+</head>
+<body>
+    {% block content %}
+        <div class="card-container">
+            {% for categoria in categorias %}
+                <div class="card">
+                    <h3>{{ categoria.nombre }}</h3>
+                    <p>{{ categoria.observacion }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+</body>
+</html>

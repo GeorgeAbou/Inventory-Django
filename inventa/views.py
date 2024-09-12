@@ -122,28 +122,28 @@ class ProductoDetailView(LoginRequiredMixin,DetailView):
 #############################categoria#################
 
 #GET
-class CategoriaListView(LoginRequiredMixin,ListView):
-    model = Categoria
-    template_name = "categorias.html"
-    context_object_name='categorias'
+# class CategoriaListView(LoginRequiredMixin,ListView):
+#     model = Categoria
+#     template_name = "categorias.html"
+#     context_object_name='categorias'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = CategoriaForm()  # Añadimos el formulario al contexto
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['form'] = CategoriaForm()  # Añadimos el formulario al contexto
+#         return context
 
 
 #POST
-class CategoriaCreateView(CreateView):
-    model = Categoria
-    form_class=CategoriaForm
-    template_name = "categorias.html"
+# class CategoriaCreateView(CreateView):
+#     model = Categoria
+#     form_class=CategoriaForm
+#     template_name = "categorias.html"
 
-    def form_valid(self, form):
-        messages.success(self.request, 'Categoria  agregada exitosamente.')
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         messages.success(self.request, 'Categoria  agregada exitosamente.')
+#         return super().form_valid(form)
 
-    def get_success_url(self):
-        return reverse_lazy('categorias')
+#     def get_success_url(self):
+#         return reverse_lazy('categorias')
 
 #PUT    

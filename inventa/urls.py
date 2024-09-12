@@ -12,8 +12,8 @@ urlpatterns = [
     path('home/productos/<int:pk>/editar/', ProductoUpdateView.as_view(), name='editar_producto'),
     path('home/productos/<int:pk>/eliminar/',ProductoDeleteView.as_view(), name='eliminar_producto'),
     #categorias
-    path('home/categorias/', CategoriaListView.as_view(), name='categorias'),
-    path('home/categorias/crear', CategoriaCreateView.as_view(), name='crear_categoria'),
-    path('home/categorias/editar', CategoriaUpdateView.as_view(), name='editar_categoria'),
-    path('home/categorias/eliminar', CategoriaDeleteView.as_view(), name='eliminar_categoria'),
+    # path('home/categorias/', CategoriaListView.as_view(), name='categorias'),
+    # path('home/categorias/crear', CategoriaCreateView.as_view(), name='crear_categoria'),
+    # path('home/categorias/editar', CategoriaUpdateView.as_view(), name='editar_categoria'),
+    # path('home/categorias/eliminar', CategoriaDeleteView.as_view(), name='eliminar_categoria'),
 ]

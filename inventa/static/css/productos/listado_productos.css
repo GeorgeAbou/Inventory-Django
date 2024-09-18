@@ -1,0 +1,92 @@
+body {
+    background-color: #f8f9fa; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #515151;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+/* Estilo para el formulario */
+.form-section {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: calc(85% - 40px); /* Ancho completo menos márgenes */
+    max-width: 600px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar el formulario */
+}
+
+button {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Padding uniforme */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para el botón */
+    width: calc(50% - 40px); /* Ancho calculado */
+    margin-top: 10px; /* Espacio superior */
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 10px; /* Espaciado superior */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo para la tabla */
+.list-section {
+    margin-top: 20px; /* Espacio superior */
+}
+
+.list-section table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Eliminar espacios entre celdas */
+}
+
+.list-section th, .list-section td {
+    border: 1px solid #ced4da; /* Borde gris claro */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.list-section th {
+    background-color: #f9f964; /* Color de fondo para encabezados */
+    color: #333; /* Color de texto */
+}
+
+.list-section tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo para filas pares */
+}
+
+/* Media Queries para mejorar responsividad */
+@media (max-width: 768px) {
+    .form-section {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        padding: 10px; /* Padding reducido */
+    }
+
+    button {
+        padding: 8px; /* Padding reducido en el botón */
+    }
+
+    .list-section table {
+        font-size: 14px; /* Tamaño de fuente reducido */
+    }
+}

@@ -11,9 +11,11 @@ urlpatterns = [
     path('home/productos/<int:pk>/',ProductoDetailView.as_view(), name='detalle_producto'),
     path('home/productos/<int:pk>/editar/', ProductoUpdateView.as_view(), name='editar_producto'),
     path('home/productos/<int:pk>/eliminar/',ProductoDeleteView.as_view(), name='eliminar_producto'),
+     path('linkedin/', redirect_to_linkedin, name='linkedin_redirect'),
     #categorias
-    # path('home/categorias/', CategoriaListView.as_view(), name='categorias'),
-    # path('home/categorias/crear', CategoriaCreateView.as_view(), name='crear_categoria'),
-    # path('home/categorias/editar', CategoriaUpdateView.as_view(), name='editar_categoria'),
-    # path('home/categorias/eliminar', CategoriaDeleteView.as_view(), name='eliminar_categoria'),
+    path('home/categorias/', CategoriaListView.as_view(), name='categorias'),
+    path('home/categorias/<int:pk>/',CategoriaDetailView.as_view(), name='detalle_categoria'),
+    path('home/categorias/crear/', CategoriaCreateView.as_view(), name='crear_categoria'),
+    path('home/categorias/<int:pk>/editar/', CategoriaUpdateView.as_view(), name='editar_categoria'),
+    path('home/categorias/<int:pk>/eliminar/', CategoriaDeleteView.as_view(), name='eliminar_categoria'),
 ]

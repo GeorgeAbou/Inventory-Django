@@ -1,0 +1,112 @@
+body {
+    background-color: #f8f9fa; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #515151;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin-bottom: 0; /* Sin margen inferior para evitar espacio */
+    width: 100%; /* Ancho completo */
+}
+
+/* Tarjetas de categorías sin espacio entre columnas */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Dos tarjetas por fila */
+    gap: 10px; /* Sin espacio entre tarjetas */
+    justify-items: center; /* Centra las tarjetas */
+    margin-top: 10px; /* Sin margen para alinearlas con el formulario */
+}
+
+/* Estilo de cada tarjeta */
+.card {
+    background-color: #f9f964;
+    border-radius: 10px; /* Bordes redondeados */
+    color: #007bff;
+    padding: 10px; /* Reducir padding interno */
+    width: 100%; /* Ancho completo */
+    max-width: 180px; /* Ancho máximo más pequeño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.2s; /* Transición suave */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    color: hsl(0, 0%, 2%);
+    text-align: center;
+}
+
+h4 {
+    color: darkgreen;
+}
+
+b {
+    color: #515151;
+}
+form {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: calc(85% - 40px); /* Ancho completo menos márgenes */
+    margin: 0 auto; /* Centrar el formulario */
+    color: #333; /* Color de texto */
+}
+button {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Padding uniforme */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para el botón */
+    width:calc(50% - 40px) ;
+    margin-top: 10px; /* Espacio superior */
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 10px; /* Espaciado superior */
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Para mejorar el tamaño del área de descripción */
+form textarea {
+    height: 100px; /* Altura personalizada */
+    resize: vertical; /* Permitir redimensionar verticalmente */
+}
+
+
+/* Media Queries para mejorar responsividad */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr); /* Una tarjeta por fila en pantallas pequeñas */
+    }
+
+    .card {
+        max-width: 90%; /* Ancho máximo en pantallas pequeñas */
+    }
+
+    form {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        max-width: none; /* Sin ancho máximo */
+        padding: 10px; /* Padding reducido */
+    }
+}

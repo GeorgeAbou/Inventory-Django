@@ -47,14 +47,7 @@ class ProductoForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         
-        #otra manera
-        # def __init__(self,*args, **kwargs):
-        #  super().__init__(*args, **kwargs)   
-        #  for field in iter(self.fields):
-        #      self.fields[field].widget.attrs.update({
-        #          'class': 'form-control'
-        #          })
-
+        
 
 #formulario categoria
 
@@ -64,8 +57,8 @@ class CategoriaForm(forms.ModelForm):
 
         fields = ['nombre', 'observacion']
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de  Categoria'}),
-            'observacion': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Observacion Categoria', 'rows': 4}),
+            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Escirbe aqui'}),
+            'observacion': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Escirbe aqui', 'rows': 4}),
         }
 
         

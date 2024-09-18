@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <head>
+        <title>Listado de Categorías</title>
+        <link rel="stylesheet" href="{% static 'css/categorias/categorias.css' %}">
+    </head>
+    <body>
+        <h1>Listado de Categorías</h1>
+
+        <form method="post" action="{% url 'crear_categoria' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Añadir Categoría</button>
+        </form>
+
+        <div class="card-container">
+            {% for categoria in categorias %}
+                <div class="card">
+                    <h3>{{ categoria.nombre }}</h3>
+                    <h4><b>Descripción :</b> {{ categoria.observacion }}.</h4>
+                  
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+{% endblock %}
